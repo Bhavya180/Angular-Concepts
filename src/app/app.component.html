@@ -1,0 +1,28 @@
+<!--  Angular Pipes  -->
+<h1>{{ title | uppercase}}</h1>
+<h1>{{ title | slice : 3 | uppercase}}</h1>
+<h2>{{ 20 | usdInr : 90 }}</h2>
+
+
+<!--  Angular Lifecycle Hooks  -->
+<div>
+    <input type="text" #input>
+    <button (click)="OnSubmit(input)">Submit</button>
+    <app-demo [value]="inputText" *ngIf="destroy">
+        <h4>This is projected content {{ inputText }}</h4>
+    </app-demo>
+    <br><br>
+    <button (click)="DestroyComponent()">Destroy</button>
+</div>
+
+
+
+<!--  Switch Case  -->
+<div [ngSwitch]="color">
+    <h1 *ngSwitchCase="'red'" style="color: red;">Red Color</h1>
+    <h1 *ngSwitchCase="'green'" style="color: green;" >Green Color</h1>
+    <h1 *ngSwitchCase="'blue'" style="color: blue;">Blue Color</h1>
+    <h1 *ngSwitchCase="'orange'" style="color: orange;">Orange Color</h1>
+    <h1 *ngSwitchCase="'skyblue'" style="color: skyblue;">Skyblue Color</h1>
+    <h1 *ngSwitchDefault >Unknown Color</h1>
+</div>
